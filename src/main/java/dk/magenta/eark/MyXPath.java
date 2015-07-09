@@ -1,14 +1,25 @@
 package dk.magenta.eark;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.Namespace;
+import org.jdom2.filter.Filters;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.xpath.XPathExpression;
+import org.jdom2.xpath.XPathFactory;
   
 public class MyXPath {
-    // private static String xmlSource = "http://feeds.bbci.co.uk/news/technology/rss.xml?edition=int";
+    private static String xmlSource = "http://feeds.bbci.co.uk/news/technology/rss.xml?edition=int";
   
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JDOMException, IOException {
   
-    	Element hurra = new Element("hurra");
-    	/*
+    	// Element hurra = new Element("hurra");
+    	// System.out.println(hurra);
+    	
         // read the XML into a JDOM2 document.
         SAXBuilder jdomBuilder = new SAXBuilder();
         Document jdomDocument = jdomBuilder.build(xmlSource);
@@ -44,7 +55,7 @@ public class MyXPath {
         // descendant of item with name title.
         Element firstTitle = xFactory.compile("//channel/child::item/descendant::title", Filters.element()).evaluateFirst(jdomDocument);
         System.out.println(firstTitle.getValue());
-  	*/
+  	
     }
   
 }
